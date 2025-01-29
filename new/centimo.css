@@ -1,0 +1,61 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Brand Container */
+.brand-container {
+    text-align: center;
+}
+
+/* CENTIMO Text Styling */
+.brand-name {
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Glowing Effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff007f;
+    }
+    100% {
+        text-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff4b2b, 0 0 35px #ff4b2b, 0 0 45px #ff4b2b;
+    }
+}
+
+/* Background animation */
+body {
+    background: linear-gradient(45deg, #ff007f, #ff4b2b, #ff007f);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}

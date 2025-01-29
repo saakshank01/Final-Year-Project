@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Side Navbar</title>
+  <link rel="stylesheet" href="navbar.css">
+
+
+  <script>
+      // Function to open the sidebar
+function toggleNav() {
+  var nav = document.getElementById("myNav");
+  var navOptions = document.querySelector(".nav-options");
+  if (nav.style.width === "250px") {
+    nav.style.width = "0";
+    navOptions.style.display = "none"; // Hide the options when the navbar closes
+    document.body.classList.remove('sidenav-open');
+  } else {
+    nav.style.width = "250px";
+    navOptions.style.display = "flex"; // Display the options when the navbar opens
+    document.body.classList.add('sidenav-open');
+  }
+}
+
+// Function to close the sidebar
+function closeNav() {
+  var nav = document.getElementById("myNav");
+  var navOptions = document.querySelector(".nav-options");
+  nav.style.width = "0";
+  navOptions.style.display = "none"; // Hide the options when the navbar closes
+  document.body.classList.remove('sidenav-open');
+}
+
+
+  </script>
+
+
+
+
+
+</head>
+<body>
+  <!-- Menu Button -->
+  <button class="menu-btn" onclick="toggleNav()">Menu</button>
+
+  <!-- Sidebar Navbar -->
+  <div id="myNav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="nav-options">
+      <a href="#">Home</a>
+      <a href="#">Login</a>
+      <a href="#">Sign In</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* Apply a no-repeat background to the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('background.JPG') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* Container holding both images */
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+/* Left image styling */
+.left-image {
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    top:0;
+    left:0;
+
+}
+
+.left-image img {
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 10px;
+    bottom:30px;
+    
+
+    
+}
+
+/* New div with image at the right-bottom corner */
+.right-bottom-image {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.right-bottom-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area properly */
+}
+
+/* Button styling */
+.try-button {
+    position: fixed;
+    bottom: 10%; /* Position the button at the bottom of the page */
+    left: 10%; /* Position the button on the left side */
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+    border-radius: 50px;
+    font-size: 24px; /* Increase font size for a bigger button */
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Apply blur for the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.try-button:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}

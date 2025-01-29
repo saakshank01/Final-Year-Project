@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff; /* White background */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.left {
+    width: 60%; /* Occupy 60% of the screen width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.right {
+    width: 40%; /* Occupy 40% of the screen width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('bg.JPG'); /* Add background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    text-align: center;
+    padding: 20px;
+}
+
+.right h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.right p {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background-color: white;
+    color: #394068;
+    padding: 15px 30px;
+    border-radius: 50px; /* Round button */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #394068;
+    color: white;
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw; /* Adjusted width to keep it centered and within viewport */
+    height: 60vh; /* Height to allow rotation but not take up the full screen */
+    flex-direction: column;
+}
+
+.slider {
+    position: absolute;
+    display: flex;
+    gap: 25px; /* Increased gap between the images */
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    animation: rotateEmojis 20s linear infinite;
+    transform-origin: center; /* Ensure rotation is centered */
+}
+
+@keyframes rotateEmojis {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.item {
+    position: absolute;
+    width: 150px; /* Larger image size */
+    height: 150px; /* Larger image size */
+    border-radius: 50%;
+    overflow: hidden;
+    transform: 
+        rotate(calc(var(--position) * (360 / var(--quantity)) * 1deg))
+        translateY(-250px); /* Increased radius for a larger rotation path */
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Makes images circular */
+}
+
+.content {
+    position: absolute;
+    top: 50%; /* Center the text vertically within the images */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #25283B;
+    font-size: 3rem; /* Increased font size for CENTIMO */
+    font-family: 'ICA Rubrik', sans-serif;
+    z-index: 2; /* Ensure the text is above the images */
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1023px) {
+    .slider {
+        gap: 15px; /* Smaller gap for mobile */
+    }
+
+    .item {
+        width: 120px; /* Smaller size for mobile */
+        height: 120px; /* Smaller size for mobile */
+        transform: 
+            rotate(calc(var(--position) * (360 / var(--quantity)) * 1deg))
+            translateY(-230px); /* Adjusted for smaller screen */
+    }
+
+    .content {
+        font-size: 2.5rem; /* Adjust font size for mobile */
+    }
+
+    .right h2 {
+        font-size: 1.8rem; /* Adjust font size for mobile */
+    }
+
+    .right p {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+
+    .button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .slider {
+        gap: 10px; /* Even smaller gap */
+    }
+
+    .item {
+        width: 100px; /* Even smaller size for mobile */
+        height: 100px; /* Even smaller size for mobile */
+        transform: 
+            rotate(calc(var(--position) * (360 / var(--quantity)) * 1deg))
+            translateY(-200px); /* Adjusted for smaller screen */
+    }
+
+    .content {
+        font-size: 2rem; /* Adjust font size for mobile */
+    }
+
+    .right h2 {
+        font-size: 1.5rem; /* Even smaller title font size for mobile */
+    }
+
+    .right p {
+        font-size: 0.9rem; /* Even smaller paragraph font size for mobile */
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
